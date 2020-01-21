@@ -1,4 +1,4 @@
-export function maze(x,y) {
+function maze(x,y) {
 	// total number of spaces on the grid
 	var spaces = x * y - 1;
 
@@ -65,7 +65,7 @@ export function maze(x,y) {
 	return {x: x, y: y, horiz: horiz, verti: verti};
 }
  
-export function display(m) {
+function display(m) {
 	var text = [];
 	for (var j = 0; j < m.x * 2 + 1; j++) {
 		var line = [];

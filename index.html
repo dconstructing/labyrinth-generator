@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./generator.js"></script>
+        <style>
+            #maze {
+                display: flex;
+                flex-direction: column;
+                width: 260px;
+                height: 260px;
+            }
+            .mazerow {
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .wall {
+                border: 2px dotted gray;
+                display: inline-block;
+            }
+            .wall.horizontal {
+                height: 5px;
+                width: 30px;
+                margin: 0px 5px;
+            }
+            .wall.vertical {
+                height: 30px;
+                width: 5px;
+            }
+            .wall.active {
+                border: 2px solid black;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <button-regenerate></button-regenerate>
+            <div id="maze">
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(0, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(0, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(0, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(0, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(0, 4)"></wall-vertical>
+                </div>
+                <div class="mazerow">
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 0)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 1)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 2)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 3)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 4)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(0, 5)"></wall-horizontal>
+                </div>
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(1, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(1, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(1, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(1, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(1, 4)"></wall-vertical>
+                </div>
+                <div class="mazerow">
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 0)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 1)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 2)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 3)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 4)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(1, 5)"></wall-horizontal>
+                </div>
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(2, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(2, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(2, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(2, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(2, 4)"></wall-vertical>
+                </div>
+                <div class="mazerow">
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 0)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 1)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 2)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 3)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 4)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(2, 5)"></wall-horizontal>
+                </div>
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(3, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(3, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(3, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(3, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(3, 4)"></wall-vertical>
+                </div>
+                <div class="mazerow">
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 0)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 1)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 2)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 3)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 4)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(3, 5)"></wall-horizontal>
+                </div>
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(4, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(4, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(4, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(4, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(4, 4)"></wall-vertical>
+                </div>
+                <div class="mazerow">
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 0)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 1)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 2)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 3)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 4)"></wall-horizontal>
+                    <wall-horizontal v-bind:is-active="checkHorizontal(4, 5)"></wall-horizontal>
+                </div>
+                <div class="mazerow">
+                    <wall-vertical v-bind:is-active="checkVertical(5, 0)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(5, 1)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(5, 2)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(5, 3)"></wall-vertical>
+                    <wall-vertical v-bind:is-active="checkVertical(5, 4)"></wall-vertical>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let vm;
+
+            Vue.component('button-regenerate', {
+                methods: {
+                    regenerate: function(event) {
+                        console.log('regeneration triggered');
+                        vm.generateMaze();
+                    }
+                },
+                template: '<button v-on:click="regenerate">Regenerate</button>'
+            });
+
+            Vue.component('wall-vertical', {
+                props: ['isActive'],
+                template: '<div class="wall vertical" v-bind:class="{ active: isActive }"></div>'
+            });
+
+            Vue.component('wall-horizontal', {
+                props: ['isActive'],
+                template: '<div class="wall horizontal" v-bind:class="{ active: isActive }"></div>'
+            });
+
+            vm = new Vue({
+                el: '#app',
+                data: {
+                    maze: {}
+                },
+                methods: {
+                    generateMaze: function() {
+                        console.log('generating');
+                        const output = maze(6,6);
+                        console.log(output);
+                        this.maze = output;
+                    },
+                    checkVertical: function(set, position) {
+                        // for a vertical wall, check whether horizontal movement is allowed
+                        if (this.maze.horiz[set]) {
+                            return !this.maze.horiz[set][position];
+                        }
+                        return true;
+                    },
+                    checkHorizontal: function(set, position) {
+                        // for a horizontal wall, check whether vertical movement is allowed
+                        if (this.maze.verti[set]) {
+                            return !this.maze.verti[set][position];
+                        }
+                        return true;
+                    }
+                },
+                created: function() {
+                    console.log('app created');
+                    this.generateMaze();
+                }
+            });
+        </script>
+
+    </body>
+</html>
