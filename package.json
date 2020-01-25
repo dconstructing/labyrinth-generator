@@ -1,1 +1,17 @@
-{ "type": "module" }
+{
+  "type": "module",
+  "scripts": {
+    "build": "parcel build ./src/index.html --out-dir ./",
+    "dev": "parcel ./src/index.html --out-dir ./",
+    "watch": "parcel watch ./src/index.html --out-dir ./"
+  },
+  "dependencies": {
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "@vue/component-compiler-utils": "^3.1.1",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

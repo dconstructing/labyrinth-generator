@@ -26,7 +26,7 @@ const determineNeighbors = function(rows, columns, hereRow, hereColumn) {
 	return neighbors;
 };
 
-function maze(x , y, numberOfDesiredWalls) {
+export function maze(x , y, numberOfDesiredWalls) {
 	// total number of spaces on the grid
 	var spaces = x * y - 1;
 	var wallCount = ((x - 1) * y) + (x * (y - 1));
