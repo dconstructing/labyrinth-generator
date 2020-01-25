@@ -1,5 +1,5 @@
 <template>
-	<button v-on:click="regenerate">Regenerate</button>
+	<button class="regenerate" v-on:click="regenerate">Regenerate</button>
 </template>
 
 <script>

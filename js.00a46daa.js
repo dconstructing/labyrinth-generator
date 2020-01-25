@@ -9052,19 +9052,23 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $720901 = exports.default || module.exports;
+        var $de4e9c = exports.default || module.exports;
       
-      if (typeof $720901 === 'function') {
-        $720901 = $720901.options;
+      if (typeof $de4e9c === 'function') {
+        $de4e9c = $de4e9c.options;
       }
     
         /* template */
-        Object.assign($720901, (function () {
+        Object.assign($de4e9c, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { on: { click: _vm.regenerate } }, [_vm._v("Regenerate")])
+  return _c(
+    "button",
+    { staticClass: "regenerate", on: { click: _vm.regenerate } },
+    [_vm._v("Regenerate")]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -9086,9 +9090,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$720901', $720901);
+            api.createRecord('$de4e9c', $de4e9c);
           } else {
-            api.reload('$720901', $720901);
+            api.reload('$de4e9c', $de4e9c);
           }
         }
 
@@ -9114,14 +9118,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $f426e0 = exports.default || module.exports;
+        var $c3e852 = exports.default || module.exports;
       
-      if (typeof $f426e0 === 'function') {
-        $f426e0 = $f426e0.options;
+      if (typeof $c3e852 === 'function') {
+        $c3e852 = $c3e852.options;
       }
     
         /* template */
-        Object.assign($f426e0, (function () {
+        Object.assign($c3e852, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -9151,9 +9155,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$f426e0', $f426e0);
+            api.createRecord('$c3e852', $c3e852);
           } else {
-            api.reload('$f426e0', $f426e0);
+            api.reload('$c3e852', $c3e852);
           }
         }
 
@@ -9179,14 +9183,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $5f8045 = exports.default || module.exports;
+        var $0886e0 = exports.default || module.exports;
       
-      if (typeof $5f8045 === 'function') {
-        $5f8045 = $5f8045.options;
+      if (typeof $0886e0 === 'function') {
+        $0886e0 = $0886e0.options;
       }
     
         /* template */
-        Object.assign($5f8045, (function () {
+        Object.assign($0886e0, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -9216,9 +9220,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$5f8045', $5f8045);
+            api.createRecord('$0886e0', $0886e0);
           } else {
-            api.reload('$5f8045', $5f8045);
+            api.reload('$0886e0', $0886e0);
           }
         }
 
@@ -9247,6 +9251,12 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -9383,14 +9393,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $dd0bf0 = exports.default || module.exports;
+        var $7e8b34 = exports.default || module.exports;
       
-      if (typeof $dd0bf0 === 'function') {
-        $dd0bf0 = $dd0bf0.options;
+      if (typeof $7e8b34 === 'function') {
+        $7e8b34 = $7e8b34.options;
       }
     
         /* template */
-        Object.assign($dd0bf0, (function () {
+        Object.assign($7e8b34, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -9399,28 +9409,38 @@ exports.default = _default;
     "div",
     { attrs: { id: "app" } },
     [
-      _c("button-regenerate", { on: { regenerate: _vm.regenerate } }),
+      _c("h1", [_vm._v("Labyrinth Generator")]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.wallCount,
-            expression: "wallCount"
-          }
-        ],
-        attrs: { type: "number" },
-        domProps: { value: _vm.wallCount },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c("label", { attrs: { for: "wallInput" } }, [
+          _vm._v("Number of walls (typically 19-24)")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.wallCount,
+              expression: "wallCount"
             }
-            _vm.wallCount = $event.target.value
+          ],
+          attrs: { type: "number", id: "wallInput" },
+          domProps: { value: _vm.wallCount },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.wallCount = $event.target.value
+            }
           }
-        }
-      }),
+        })
+      ]),
+      _vm._v(" "),
+      _c("button-regenerate", { on: { regenerate: _vm.regenerate } }),
       _vm._v(" "),
       _c("div", { attrs: { id: "maze" } }, [
         _c(
@@ -9744,7 +9764,26 @@ exports.default = _default;
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("Generate a random maze for "),
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "https://www.dreimagier.de/das-magische-labyrinth-band/"
+          }
+        },
+        [_vm._v("The Magic Labyrinth")]
+      ),
+      _vm._v(".")
+    ])
+  }
+]
 render._withStripped = true
 
           return {
@@ -9764,9 +9803,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$dd0bf0', $dd0bf0);
+            api.createRecord('$7e8b34', $7e8b34);
           } else {
-            api.reload('$dd0bf0', $dd0bf0);
+            api.reload('$7e8b34', $7e8b34);
           }
         }
 
@@ -9819,7 +9858,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61139" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50599" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

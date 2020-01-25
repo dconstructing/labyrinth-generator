@@ -1,7 +1,13 @@
 <template>
 	<div id="app">
+		<h1>Labyrinth Generator</h1>
+		<p>Generate a random maze for <a href="https://www.dreimagier.de/das-magische-labyrinth-band/">The Magic Labyrinth</a>.</p>
+		<div>
+			<label for="wallInput">Number of walls (typically 19-24)</label>
+			<input type="number" id="wallInput" v-model="wallCount" />
+		</div>
 		<button-regenerate v-on:regenerate="regenerate"></button-regenerate>
-		<input type="number" v-model="wallCount" />
+
 		<div id="maze">
 				<div class="mazerow">
 					<wall-vertical v-bind:is-active="checkVertical(0, 0)"></wall-vertical>
