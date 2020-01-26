@@ -9294,6 +9294,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 //
 //
 //
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -9705,7 +9707,11 @@ exports.default = _default;
           ],
           1
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2)
     ],
     1
   )
@@ -9727,6 +9733,46 @@ var staticRenderFns = [
         [_vm._v("The Magic Labyrinth")]
       ),
       _vm._v(".")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("Source available on "),
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "https://github.com/dconstructing/labyrinth-generator"
+          }
+        },
+        [_vm._v("GitHub")]
+      ),
+      _vm._v(".")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("This site is in no way affiliated with "),
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "https://www.dreimagier.de/das-magische-labyrinth-band/"
+          }
+        },
+        [_vm._v("The Magic Labyrinth")]
+      ),
+      _vm._v(" or "),
+      _c("a", { attrs: { href: "https://www.dreimagier.de/" } }, [
+        _vm._v("Drei Magier")
+      ]),
+      _vm._v(", the game's publisher.")
     ])
   }
 ]
