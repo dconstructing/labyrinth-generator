@@ -6,11 +6,11 @@ A hosted version of this software can find found at https://dconstructing.github
 
 ## Principles
 
-The foundation of this generator is the underlying maze generator. It is used to generate a valid maze in which each space is accessible.
+The foundation of this generator is the underlying maze generator. It is used to generate a valid maze in which each space is accessible. I do not recall how that maze generator was developed/acquired.
 
 From that generated maze, random walls are removed until we get down to the desired number of walls.
 
-Because we start from a valid maze, we are assured that the final maze will not contain any spaces that are isolated from the others.
+Because we start from a maze in which all spaces are accessible, we are assured that the final maze will not contain any spaces that are isolated from the others.
 
 ## Build
 
@@ -19,7 +19,7 @@ Because we start from a valid maze, we are assured that the final maze will not 
 
 When running the `dev` script (as in step 2), the generated files will be placed in the project root. This is to faciliate hosting the project on GitHub Pages.
 
-The reference to index.js located in the index.html file will be prefixed with the GitHub project name path. This is not ideal, but is a workaround to faciliate hosting on GitHub pages and local development.
+The reference to `js/index.js` located in the `src/index.html` file will be prefixed with the GitHub project name path (resulting in `/labyrinth-generator/js.[hash].js`). This is not ideal, but is a workaround to faciliate hosting on GitHub pages and local development.
 
 ## Legal
 
