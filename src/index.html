@@ -1,50 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Labyrinth Generator</title>
-        <style>
-            #app {
-                text-align: center;
-            }
-            #wallInput {
-                width: 40px;
-            }
-            button.regenerate {
-                margin: 25px;
-            }
-            #maze {
-                display: flex;
-                flex-direction: column;
-                width: 260px;
-                height: 260px;
-                margin: 30px auto;
-            }
-            .mazerow {
-                display: flex;
-                justify-content: space-evenly;
-            }
-            .wall {
-                border: 2px dotted gray;
-                display: inline-block;
-            }
-            .wall.horizontal {
-                height: 5px;
-                width: 30px;
-                margin: 0px 5px;
-            }
-            .wall.vertical {
-                height: 30px;
-                width: 5px;
-            }
-            .wall.active {
-                border: 2px solid black;
-                background-color: black;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="app"></div>
+  <head>
+    <title>Labyrinth Generator</title>
+    <style>
+      #app {
+        text-align: center;
+      }
+      #wallInput {
+        width: 40px;
+      }
+      button.regenerate {
+        margin: 25px;
+      }
+      #maze {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        height: 260px;
+        margin: 30px auto;
+      }
+      .mazerow {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .wall {
+        border: 2px dotted gray;
+        display: inline-block;
+      }
+      .wall.horizontal {
+        height: 5px;
+        width: 30px;
+        margin: 0px 5px;
+      }
+      .wall.vertical {
+        height: 30px;
+        width: 5px;
+      }
+      .wall.active {
+        border: 2px solid black;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
 
-        <script src="js/index.js"></script>
-    </body>
+    <script src="js/index.js"></script>
+  </body>
 </html>

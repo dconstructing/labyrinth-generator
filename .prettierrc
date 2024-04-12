@@ -1,0 +1,11 @@
+{
+  "comment": "This config file overrides the default config provided by Vue, but the default values are copied over",
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 100,
+  "trailingComma": "none",
+  "comment2": "Opt to use .editorconfig file for those configs that can override prettier",
+  "editorconfig": true
+}
